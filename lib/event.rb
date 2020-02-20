@@ -28,9 +28,13 @@ class Event
 		self.all.clear
 	end
 
-	# def self.find_by_id(id)
-	# 	self.all.detect {|e| e.id == id}
-	# end
+	def self.print_events
+		puts ""
+		self.all.each_with_index do |event, i|
+			puts "#{i + 1}. #{event.title}"
+		end
+		puts ""
+	end
 
 end
 

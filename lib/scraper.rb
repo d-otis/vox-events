@@ -32,11 +32,13 @@ class Scraper
 			new_event.url = event['url']
 			raw_html = event['description']
 			parsed_html = Nokogiri::HTML(raw_html)
-			new_event.description = parsed_html.search('p').text.split('ACCESSIBILITY').first.split(" | ")[2]
+			# binding.pry
+			new_event.description = parsed_html.search('p').text.split('ACCESSIBILITY').first.split(" | ").last
 		end
 	end
 
 end
 
-binding.pry
+
 Scraper.new.create_events
+# binding.pry
